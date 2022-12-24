@@ -87,7 +87,6 @@ async function init() {
     const a = await inquirer.prompt(managerQuestions);
     const manager = new Manager(a.name, a.id, a.email, a.officenumber);
     employeeArray.push(manager);
-    console.log(employeeArray);
     options();
 }
 
@@ -96,13 +95,10 @@ init();
 async function options() {
     const a = await inquirer.prompt(addMore);
     if (a.options == "Add an intern") {
-        console.log("intern");
         makeIntern();
     } else if (a.options == "Add an engineer"){
-        console.log("engineer");
         makeEngineer();
     } else {
-        console.log("complete team");
         generateHTML.printEmployeeArray(employeeArray);
         const customHTML = generateHTML.createHTML();
         writeToFile(customHTML);
@@ -113,7 +109,6 @@ async function makeIntern() {
     const a = await inquirer.prompt(internQuestions);
     const intern = new Intern(a.name, a.id, a.email, a.school);
     employeeArray.push(intern);
-    console.log(employeeArray);
     options();
 }
 
@@ -121,15 +116,11 @@ async function makeEngineer() {
     const a = await inquirer.prompt(engineerQuestions);
     const engineer = new Engineer(a.name, a.id, a.email, a.github);
     employeeArray.push(engineer);
-    console.log(employeeArray);
     options();
 }
 
 function writeToFile(data) {
-    fs.writeFile("index.html", data, (err) => {
+    fs.writeFile("./dist/index.html", data, (err) => {
         err ? console.error(err) : console.log("Your team profile page has been generated");
     });
 }
-
-
-
