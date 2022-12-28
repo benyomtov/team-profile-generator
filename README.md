@@ -22,6 +22,8 @@
   
   To use this application, simply run the program in Node.js by opening this file in Git Bash and typing 'node index' into the terminal. After running this command, the user will be prompted to answer a series of questions about the manager of the team. After answering these questions, the user can either choose to add an intern or an engineer to the team, or finish building the team and generate the file. When 'Finish building team' is selected, the html file will automatically generate in the dist subfolder within the generator program files.
   
+Attached is a link to a walkthrough video for the application. https://drive.google.com/file/d/1l5fZzrhxtHfeSAaecHdH5dPqQ11gkmfj/view
+  
   ## Contributing
   
   Others can contribute by adding more features to the application.
